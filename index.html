@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <meta content="#000000" name="theme-color" />
-  <link href="./assets/img/favicon.ico" rel="shortcut icon" />
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="#000000" name="theme-color"/>
+  <link href="./assets/img/favicon.ico" rel="shortcut icon"/>
   <link
           href="./assets/img/apple-icon.png"
           rel="apple-touch-icon"
@@ -14,7 +14,39 @@
           href="./assets/vendor/@fortawesome/fontawesome-free/css/all.min.css"
           rel="stylesheet"
   />
-  <link href="./assets/styles/tailwind.css" rel="stylesheet" />
+  <link href="./assets/styles/tailwind.css" rel="stylesheet"/>
+
+  <!--  smooth Scroll-->
+
+  <script>
+    $(document).ready(function () {
+      // Add smooth scrolling to all links
+      $("a").on('click', function (event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function () {
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    });
+  </script>
+
+  <!--  End Smooth Scroll-->
+
   <title>AMX Drones</title>
 </head>
 <body class="text-gray-800 antialiased">
@@ -31,29 +63,30 @@
               class="text-gray-800 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase"
               href="./index.html"
       >AMX Drones</a
-      ><button
-            class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-            onclick="toggleNavbar('example-collapse-navbar')"
-            type="button"
-    >
-      <i class="fas fa-bars"></i>
-    </button>
+      >
+      <button
+              class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+              onclick="toggleNavbar('example-collapse-navbar')"
+              type="button"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
     <div
             class="lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none hidden"
             id="example-collapse-navbar"
     >
       <ul class="flex flex-col lg:flex-row list-none mr-auto">
-<!--        <li class="flex items-center">-->
-<!--          <a-->
-<!--                  class="hover:text-gray-600 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"-->
-<!--                  href="https://www.creative-tim.com/learning-lab/tailwind/js/overview/notus?ref=njs-index"-->
-<!--          ><i-->
-<!--                  class="text-gray-500 far fa-file-alt text-lg leading-lg mr-2"-->
-<!--          ></i>-->
-<!--            Docs</a-->
-<!--          >-->
-<!--        </li>-->
+        <!--        <li class="flex items-center">-->
+        <!--          <a-->
+        <!--                  class="hover:text-gray-600 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"-->
+        <!--                  href="https://www.creative-tim.com/learning-lab/tailwind/js/overview/notus?ref=njs-index"-->
+        <!--          ><i-->
+        <!--                  class="text-gray-500 far fa-file-alt text-lg leading-lg mr-2"-->
+        <!--          ></i>-->
+        <!--            Docs</a-->
+        <!--          >-->
+        <!--        </li>-->
       </ul>
       <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
         <li class="inline-block relative">
@@ -64,39 +97,14 @@
           >
             Pages
           </a>
-          <div
-                  class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48 navbar-popper"
-                  id="demo-pages-dropdown"
-          >
-                <span
-                        class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-no-wrap bg-transparent text-gray-500"
-                >
-                  Sections
-                </span>
-            <a
-                    class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"
-                    href="#Section2"
-            >
-              About US
-            </a>
-            <a
-                    class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"
-                    href="./pages/admin/settings.html"
-            >
-              Settings
-            </a>
-            <a
-                    class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"
-                    href="./pages/admin/tables.html"
-            >
-              Tables
-            </a>
-            <a
-                    class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"
-                    href="./pages/admin/maps.html"
-            >
-              Maps
-            </a>
+          <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48 navbar-popper" id="demo-pages-dropdown">
+            <span class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-no-wrap bg-transparent text-gray-500">Sections</span>
+            <a class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800" href="#Section2">About US</a>
+            <a class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800" href="./pages/admin/settings.html">Settings</a>
+            <a class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800" href="./pages/admin/tables.html">Tables</a>
+            <a class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800" href="./pages/admin/maps.html">Maps</a>
+            <a class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800" href="#Contactus">Contact Us</a>
+
             <div
                     class="h-0 mx-4 my-2 border border-solid border-gray-200"
             ></div>
@@ -879,46 +887,43 @@
   </div>
 
   <div class="container mx-auto">
-    <div
-            class="flex flex-wrap justify-center bg-white shadow-xl rounded-lg -mt-64 py-16 px-12 relative z-10"
-    >
+    <div class="flex flex-wrap justify-center bg-white shadow-xl rounded-lg -mt-64 py-16 px-12 relative z-10">
       <div class="w-full text-center lg:w-8/12">
-        <p class="text-4xl text-center">
-              <span aria-label="love" role="img">
-                😍
-              </span>
-        </p>
-        <h3 class="font-semibold text-3xl">
-          Do you love this Starter Kit?
-        </h3>
-        <p class="text-gray-600 text-lg leading-relaxed mt-4 mb-4">
-          Cause if you do, it can be yours now. Hit the buttons below to
-          navigate to get the Free version for your next project. Build a
-          new web app or give an old project a new look!
-        </p>
-        <div class="sm:block flex flex-col mt-10">
-          <a
-                  class="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-2 bg-pink-500 active:bg-pink-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
-                  href="https://www.creative-tim.com/learning-lab/tailwind/js/overview/notus?ref=njs-index"
-                  target="_blank"
-          >
-            Get started
-          </a>
-          <a
-                  class="github-star sm:ml-1 text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-gray-800 active:bg-gray-700 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
-                  href="https://github.com/creativetimofficial/notus-js?ref=njs-index"
-                  target="_blank"
-          >
-            <i class="fab fa-github text-lg mr-1"></i>
-            <span>Help With a Star</span>
-          </a>
-        </div>
+        <!--        <p class="text-4xl text-center">-->
+        <!--              <span aria-label="love" role="img">-->
+        <!--                😍-->
+        <!--              </span>-->
+        <!--        </p>-->
+        <h3 class="font-semibold text-3xl">Contact Us</h3>
+        <p class="text-gray-600 text-lg leading-relaxed mt-4 mb-4">Google Maps directions to navigate to our office.</p>
+        <!--        <div class="sm:block flex flex-col mt-10">-->
+
+        <!--&lt;!&ndash;          <a&ndash;&gt;-->
+        <!--&lt;!&ndash;                  class="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-2 bg-pink-500 active:bg-pink-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"&ndash;&gt;-->
+        <!--&lt;!&ndash;                  href="https://www.creative-tim.com/learning-lab/tailwind/js/overview/notus?ref=njs-index"&ndash;&gt;-->
+        <!--&lt;!&ndash;                  target="_blank"&ndash;&gt;-->
+        <!--&lt;!&ndash;          >&ndash;&gt;-->
+        <!--&lt;!&ndash;            Get started&ndash;&gt;-->
+        <!--&lt;!&ndash;          </a>&ndash;&gt;-->
+        <!--&lt;!&ndash;          <a&ndash;&gt;-->
+        <!--&lt;!&ndash;                  class="github-star sm:ml-1 text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-gray-800 active:bg-gray-700 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"&ndash;&gt;-->
+        <!--&lt;!&ndash;                  href="https://github.com/creativetimofficial/notus-js?ref=njs-index"&ndash;&gt;-->
+        <!--&lt;!&ndash;                  target="_blank"&ndash;&gt;-->
+        <!--&lt;!&ndash;          >&ndash;&gt;-->
+        <!--&lt;!&ndash;            <i class="fab fa-github text-lg mr-1"></i>&ndash;&gt;-->
+        <!--&lt;!&ndash;            <span>Help With a Star</span>&ndash;&gt;-->
+        <!--&lt;!&ndash;          </a>&ndash;&gt;-->
+        <!--        </div>-->
         <div class="text-center mt-16"></div>
       </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242.9636262050186!2d77.56306710155407!3d13.009031061043078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17f554d4ddf7%3A0xd72c356309944b3f!2sAMX%20Innovation%20Pvt.Ltd.!5e0!3m2!1sen!2sin!4v1610693149402!5m2!1sen!2sin"
+              width="100%" height="500px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+              tabindex="0"></iframe>
+
     </div>
   </div>
 </section>
-<footer class="relative bg-gray-300 pt-8 pb-6">
+<footer class="relative bg-gray-300 pt-8 pb-6" id="Contactus">
   <div
           class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
           style="transform: translateZ(0);"
@@ -946,29 +951,18 @@
           Find us on any of these platforms, we respond 1-2 business days.
         </h5>
         <div class="mt-6 lg:mb-0 mb-6">
-          <button
-                  class="bg-white text-blue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                  type="button"
-          >
-            <i class="fab fa-twitter"></i>
-          </button>
+
           <button
                   class="bg-white text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                   type="button"
           >
             <i class="fab fa-facebook-square"></i>
           </button>
-          <button
-                  class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                  type="button"
-          >
-            <i class="fab fa-dribbble"></i>
+          <button class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button" onclick="location.href='https://in.linkedin.com/company/amx-innovation'">
+            <i class="fab fa-linkedin-in"></i>
           </button>
-          <button
-                  class="bg-white text-gray-900 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                  type="button"
-          >
-            <i class="fab fa-github"></i>
+          <button class="bg-white text-gray-900 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
+            <i class="fab fa-whatsapp"></i>
           </button>
         </div>
       </div>
@@ -1019,7 +1013,7 @@
                 <span
                         class="block uppercase text-gray-600 text-sm font-semibold mb-2"
                 >
-                  Other Resources
+                  Contact Details
                 </span>
             <ul class="list-unstyled">
               <li>
@@ -1027,7 +1021,7 @@
                         class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
                         href="https://github.com/creativetimofficial/notus-js/blob/master/LICENSE.md?ref=njs-index"
                 >
-                  MIT License
+                  E-Mail
                 </a>
               </li>
               <li>
@@ -1035,7 +1029,7 @@
                         class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
                         href="https://creative-tim.com/terms?ref=njs-index"
                 >
-                  Terms & Conditions
+                  Phone
                 </a>
               </li>
               <li>
@@ -1043,15 +1037,7 @@
                         class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
                         href="https://creative-tim.com/privacy?ref=njs-index"
                 >
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a
-                        class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="https://creative-tim.com/contact-us?ref=njs-index"
-                >
-                  Contact Us
+                  Mobile
                 </a>
               </li>
             </ul>
@@ -1059,20 +1045,13 @@
         </div>
       </div>
     </div>
-    <hr class="my-6 border-gray-400" />
+    <hr class="my-6 border-gray-400"/>
     <div
             class="flex flex-wrap items-center md:justify-between justify-center"
     >
       <div class="w-full md:w-4/12 px-4 mx-auto text-center">
         <div class="text-sm text-gray-600 font-semibold py-1">
-          Copyright © <span id="get-current-year"></span> Notus JS by
-          <a
-                  class="text-gray-600 hover:text-gray-900"
-                  href="https://www.creative-tim.com?ref=njs-index"
-          >
-            Creative Tim
-          </a>
-          .
+          Copyright © <span id="get-current-year"></span> by AMX Innovation .
         </div>
       </div>
     </div>
@@ -1089,11 +1068,13 @@
       ).innerHTML = new Date().getFullYear();
     }
   })();
+
   /* Function for opning navbar on mobile */
   function toggleNavbar(collapseID) {
     document.getElementById(collapseID).classList.toggle("hidden");
     document.getElementById(collapseID).classList.toggle("block");
   }
+
   /* Function for dropdowns */
   function openDropdown(event, dropdownID) {
     let element = event.target;
